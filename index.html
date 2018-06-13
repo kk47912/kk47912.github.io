@@ -35,16 +35,6 @@
             call_func_CloseMenu = func_CloseMenu;
 
             function func_resizeFrame() {
-                //var obj = document.getElementById(fr);
-                //obj.style.height = "0px";
-                //var h = obj.contentWindow.document.body.clientHeight;
-                //var h = obj.contentDocument.documentElement.scrollHeight;
-                //$(this).height($(this).contents().find('body')[0].scrollHeight + "px");
-                //var h = (obj.contentWindow.document.body.scrollHeight + obj.contentWindow.document.body.offsetHeight - obj.contentWindow.document.body.clientHeight);
-                //obj.style.height = h + 50 + "px";
-                //alert($("#id_mainframe").contents().find('body')[0].scrollHeight);
-
-                alert(document.getElementById("id_mainframe").contentWindow.document.body.scrollHeight);
                 $("#id_mainframe").height($("#id_mainframe").contents().find('body')[0].offsetHeight + 60);
                 if (window.matchMedia('screen and (min-width:800px) and (orientation:landscape)').matches) {
                     $("#view_menu").removeClass("open");
