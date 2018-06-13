@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <script language=javascript>
+        document.onkeydown = trapRefresh;
+        function trapRefresh() {
+            if (event.keyCode == 116) {
+                event.keyCode = 0;
+                event.cancleBubble = true;
+                event.returnValue = false;
+                document.location.reload();
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            color: #E8E6E6;
+        }
+
+        body {
+            font-family:'Malgun Gothic';
+            background: #232323;
+            margin-top: 30px;
+            height: 200%;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            border: 0;
+            margin: 20px;
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #E8E6E6;
+        }
+
+        p, div {
+            color: #F2F2F2;
+            text-align: center;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        div {
+            margin: 0px;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body id="id_body">
+    <h1>Girl's frontline 스토리 해설집</h1>
+    <img src="./Image/img_Main.png" alt="img_Main">
+
+    <p>
+        이 사이트는 중국의 모바일 게임 '소녀전선'의 스토리를 정리하고자 만들어진 사이트입니다.</br>
+        많은 사람들이 이것을 보고 소녀전선의 스토리를 이해하는 데에 도움이 되었으면 하는 바입니다.
+    </p>
+    <p>
+        의도치않은 스포일러 방지를 위해 이 사이트는 텍스트필터 기능을 사용하고 있습니다.<br>
+        메뉴에 있는 체크박스를 표시하면 그와 관련된 내용을 볼 수 있습니다.
+    </p>
+    <br>
+    <div style="color:#FFCC00;">&lt;현재 사이트에서 표시되는 관련텍스트&gt;</div>
+    <!--
+    <div>
+
+        <ul>
+            <li>제0장</li>
+            <li>제1장</li>
+            <li>제2장</li>
+            <li>제3장</li>
+            <li>제4장</li>
+            <li>제5장</li>
+            <li>제6장</li>
+            <li>제7장</li>
+        </ul>
+    </div>
+    <br>
+    <div>
+        <ul>
+            <li>큐브작전</li>
+            <li>저체온증</li>
+        </ul>
+    </div>
+    -->
+    <div>
+        없음
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<script language=javascript>
+		document.onkeydown = trapRefresh;
+		function trapRefresh()
+		{
+			if (event.keyCode == 116)
+			{
+				event.keyCode = 0;
+				event.cancleBubble = true;
+				event.returnValue = false;
+				document.location.reload();
+			}
+		}
+	</script>
+	<style type="text/css">
+        body {
+            font-family: 'Malgun Gothic';
+        }
+		div.subtitle {
+			color:#FFE251;
+			font-size:18pt;
+			font-style:italic;
+			text-align:center;
+			font-family:"Malgun Gothic";
+		}
+		img{
+			display:block;
+			max-width:80%;
+			height:auto;
+			margin-left:auto;
+			margin-right:auto;
+		}
+	</style>
+</head>
+<body topmargin=30 style="background-color:#232323;">
+	<h1 style="text-align:center; color:#EAC300;">제4장</h1>
+
+	<p style="text-align:center; color:#EAC300;">
+		<span style="font-size:35px; font-weight:bold;">소문</span>
+		<span style="font-size:15px; vertical-align:bottom;">The Message</span>
+		<div class="subtitle">'폭풍이 다가온다'</div>
+	</p>
+
+	<img src="../Image/map_stage04.png" alt="map_stage04">
+</body>
+
+</html>

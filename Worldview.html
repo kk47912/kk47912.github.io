@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+
+	<script language="javascript">
+		document.onkeydown = trapRefresh;
+		function trapRefresh()
+		{
+			if (event.keyCode == 116)
+			{
+				event.keyCode = 0;
+				event.cancleBubble = true;
+				event.returnValue = false;
+				document.location.reload();
+			}
+		}
+	</script>
+
+	<!--페이지 변경-->
+	<script type="text/javascript">
+        var cnt = 1;
+        function check_page() {
+            var wvimg = document.getElementById("wv_img"); //이미지 변경
+            wvimg.src = "./Image/wv" + cnt + ".jpg";
+            wvimg.alt = "wv" + cnt;
+
+            document.getElementsByName("Current_page")[0].innerHTML = cnt; //페이지수 표시
+            document.getElementsByName("Current_page")[1].innerHTML = cnt;
+
+            var obj;
+            obj = document.getElementsByName("bt_prev"); //버튼스타일 변경
+            if (cnt <= 1) {
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].style.opacity = 0;
+                    obj[i].style.cursor = "default";
+                }
+            } else {
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].style.opacity = 1;
+                    obj[i].style.cursor = "pointer";
+                }
+            }
+
+            obj = document.getElementsByName("bt_next");
+            if (cnt >= 5) {
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].style.opacity = 0;
+                    obj[i].style.cursor = "default";
+                }
+            } else {
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].style.opacity = 1;
+                    obj[i].style.cursor = "pointer";
+                }
+            }
+        }
+		function prevImg(){
+            if (cnt > 1) {
+                cnt--;
+                //document.getElementById("page_top").scrollIntoView();
+                check_page();
+			}
+		}
+		function nextImg(){
+            if (cnt < 5) {
+                cnt++;
+                //document.getElementById("page_top").scrollIntoView();
+                check_page();
+			}
+		}
+	</script>
+
+	<style type="text/css">
+        body {
+            font-family: 'Malgun Gothic';
+        }
+		a.page{
+			text-decoration:none;
+			color:#FFD500;
+		}
+		a.page:hover{
+			text-decoration:none;
+			color:#FFF600;
+		}
+	</style>
+</head>
+
+<body topmargin=30 style="background-color:#232323; text-align:center;">
+	<h1 id="page_top" style="color:#E8E6E6;">Girl's frontline의 세계관</h1>
+	<p style="color:#FFD500; font-size:27pt;">
+		<span><a href="javascript:void(0)" name="bt_prev" class="page" onclick="prevImg();">&lt;&lt;&nbsp;&nbsp;</a></span> <!-- 페이지1일때 안보이게 -->
+		<span name="Current_page">1</span>
+		<span>/</span>
+		<span>5</span>
+		<span><a href="javascript:void(0)" name="bt_next" class="page" onclick="nextImg();">&nbsp;&nbsp;&gt;&gt;</a></span> <!-- 페이지5일때 안보이게 -->
+	</p>
+	<p>
+		<img style="max-width:95%; height:auto;" src="./Image/wv1.jpg" alt="wv1" id="wv_img"> <!-- 페이지 이동마다 이미지 바뀌게하기 -->
+	</p>
+	<p style="color:#FFD500; font-size:27pt;">
+		<span><a href="javascript:void(0)" name="bt_prev" class="page" onclick="prevImg();">&lt;&lt;&nbsp;&nbsp;</a></span> <!-- 페이지1일때 안보이게 -->
+		<span name="Current_page">1</span>
+		<span>/</span>
+		<span>5</span>
+		<span><a href="javascript:void(0)" name="bt_next" class="page" onclick="nextImg();">&nbsp;&nbsp;&gt;&gt;</a></span> <!-- 페이지5일때 안보이게 -->
+	</p>
+
+    <script type="text/javascript">
+        check_page();
+    </script>
+</body>
+</html>

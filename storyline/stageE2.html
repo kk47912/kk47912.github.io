@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<script language=javascript>
+		document.onkeydown = trapRefresh;
+		function trapRefresh()
+		{
+			if (event.keyCode == 116)
+			{
+				event.keyCode = 0;
+				event.cancleBubble = true;
+				event.returnValue = false;
+				document.location.reload();
+			}
+		}
+	</script>
+
+	<style type="text/css">
+        body {
+            font-family: 'Malgun Gothic';
+        }
+		img{
+			display:block;
+			width:80%;
+			height:auto;
+			margin-left:auto;
+			margin-right:auto;
+		}
+	</style>
+</head>
+<body topmargin=30 style="background-color:#232323;">
+	<h1 style="text-align:center; color:#EAC300;">이벤트 : 저체온증</h1>
+	<img src="../Image/img_Arctic_warfare.png" alt="img_Arctic_warfare">
+	<p style="text-align:center;">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/jLUattTNuKs?start=5" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	</p>
+</body>
+</html>

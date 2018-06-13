@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <script language=javascript>
+        document.onkeydown = trapRefresh;
+        function trapRefresh() {
+            if (event.keyCode == 116) {
+                event.keyCode = 0;
+                event.cancleBubble = true;
+                event.returnValue = false;
+                document.location.reload();
+            }
+        }
+    </script>
+
+    <!--initialize-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: #E8E6E6;
+        }
+        body {
+            margin-top:30px;
+            font-family: 'Malgun Gothic';
+            background: #232323;
+            white-space:nowrap;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            border: 0;
+        }
+    </style>
+
+    <style type="text/css">
+        ul.bigterm{
+            text-align: center;
+            display: inline-block;
+        }
+        ul.smterm {
+            text-align: center;
+            display: inline-block;
+        }
+        ul.bigterm > li {
+            padding: 5px;
+            padding-right: 50px;
+            font-size: 25px;
+            float:left;
+        }
+        ul.bigterm > li > a {
+            text-decoration: none;
+            color: #FFD500;
+        }
+        ul.bigterm > li > a:hover {
+            text-decoration: none;
+            color: #FFF600;
+        }
+
+        ul.smterm > li {
+            padding: 5px;
+            padding-right: 50px;
+            font-size: 20px;
+            float:left;
+        }
+        ul.smterm > li > a {
+            text-decoration: none;
+            color: #FFFF00;
+        }
+        ul.smterm > li > a:hover {
+            text-decoration: none;
+            color: #FFFF8E;
+        }
+
+        div {
+            margin:0 auto;
+            width:90%;
+            margin-top:20px;
+        }
+        div:nth-of-type(1):after {
+            content:"";
+            display:block;
+            width:90%;
+            margin:0 auto;
+            margin-top:20px;
+            border-bottom:1px solid white;
+        }
+    </style>
+</head>
+<body>
+	<h1 style="text-align:center; color:#E8E6E6;">세계관 용어집</h1>
+    <div>
+	    <ul class="bigterm">
+	    	<li><a href="">ㆍ북란도 사건</a></li>
+	    	<li><a href="">ㆍ제3차 세계대전</a></li>
+	    	<li><a href="">ㆍ광역성저복사감염증(ELID)</a></li>
+    		<li><a href="">ㆍ나비사건</a></li>
+	    </ul>
+    </div>
+    <div>
+        <ul class="smterm">
+	    	<li><a href="">ㆍ각인</a></li>
+	    	<li><a href="">ㆍ90wish</a></li>
+		    <li><a href="">ㆍ페르시카</a></li>
+	    	<li><a href="">ㆍ리코</a></li>
+	    	<li><a href="">ㆍ지나 프로토콜</a></li>
+	    	<li><a href="">ㆍ오가스 프로토콜</a></li>
+	    	<li><a href="">ㆍ우산 바이러스</a></li>
+	    </ul>
+    </div>
+</body>
+
+</html>
