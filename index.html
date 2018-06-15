@@ -65,6 +65,7 @@
         }
 
         $(window).resize(function () {
+            $("#mobile_list_story > ul").css('height', $("#view_menu").height() - $("#view_menu_1").height() - $("#view_menu_2").height() - $("#mobile_list_story > span").height() - 70 + "px");
             callfunction('call_func_resizeFrame');
         });
     </script>
