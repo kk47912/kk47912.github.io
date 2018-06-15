@@ -11,6 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1:600" rel="stylesheet">
 
     <script language="javascript">
         document.onkeydown = trapRefresh;
@@ -25,11 +26,27 @@
     </script>
     <script>
         $(document).ready(function () {
+            $("#mobile_list_story > ul").css('height', $("#view_menu").height() - $("#view_menu_1").height() - $("#view_menu_2").height() - $("#mobile_list_story > span").height() - 70 + "px");
+            $("#list_story > span").click(function () {
+                if ($("#list_story").hasClass("open")) {
+                    $("#list_story").removeClass("open");
+                } else {
+                    $("#list_story").addClass("open");
+                }
+            });
+            $("#mobile_list_story > span").click(function () {
+                if ($("#mobile_list_story").hasClass("open")) {
+                    $("#mobile_list_story").removeClass("open");
+                } else {
+                    $("#mobile_list_story").addClass("open");
+                }
+            });
+
             $("#bt_menu > img").click(function () {
                 $("#view_menu, .page_cover, html").addClass("open");
             });
 
-            function func_CloseMenu () {
+            function func_CloseMenu() {
                 $("#view_menu, .page_cover, html").removeClass("open");
             }
             call_func_CloseMenu = func_CloseMenu;
@@ -37,7 +54,7 @@
             function func_resizeFrame() {
                 $("#id_mainframe").height($("#id_mainframe").contents().find('body')[0].offsetHeight + 60);
                 if (window.matchMedia('screen and (min-width:800px) and (orientation:landscape)').matches) {
-                    $("#view_menu").removeClass("open");
+                    $("#view_menu, .page_cover, html").removeClass("open");
                 }
             }
             call_func_resizeFrame = func_resizeFrame;
@@ -51,7 +68,7 @@
             callfunction('call_func_resizeFrame');
         });
     </script>
-    
+
 
     <!--initialize-->
     <style>
@@ -59,6 +76,15 @@
             margin: 0;
             padding: 0;
             color: #E8E6E6;
+        }
+
+        #main_aside, #view_menu, .page_cover {
+            /*드래그 방지*/
+            -ms-user-select: none;
+            -moz-user-select: -moz-none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            user-select: none;
         }
 
         body {
@@ -89,14 +115,23 @@
                 position: relative;
             }
 
-                #main_header > #title {
-                    position: absolute;
-                    left: 10px;
-                    top: 20px;
-                }
+            main_header > #title {
+                position: absolute;
+                left: 10px;
+                top: 20px;
+            }
 
-                #main_header > #bt_menu {
-                    display: none;
+            #main_header > #bt_menu {
+                display: none;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+            }
+
+                #main_header > #bt_menu > img {
+                    width: 50px;
+                    height: 50px;
+                    cursor: pointer;
                 }
 
             body > input:nth-of-type(1) {
@@ -108,7 +143,7 @@
             }
         }
 
-        @media screen and (max-width:799px), (orientation:portrait) {
+        @media screen and (max-width:799.5px), (orientation:portrait) {
             #main_header {
                 min-width: 550px;
                 margin: 0 auto;
@@ -128,36 +163,17 @@
                     right: 10px;
                     top: 10px;
                 }
-                #main_header > #bt_menu > img {
-                    width: 50px;
-                    height: 50px;
-                    cursor : pointer;
-                }
+
+                    #main_header > #bt_menu > img {
+                        width: 50px;
+                        height: 50px;
+                        cursor: pointer;
+                    }
         }
     </style>
 
     <!--Mobile Menu-->
     <style>
-        /*#view_menu {
-            min-width: 550px;
-            padding-left: 20px;
-            padding-right: 20px;
-            background: #474747;
-        }
-        #view_menu > table {
-            color: red;
-            width: 100%;
-            text-align: center;
-            font-size: 20px;
-        }
-        #view_menu > img {
-            width: 100%;
-            height: 1px;
-        }
-        #view_menu > div > ul > li {
-            display: inline-block;
-            margin-right: 20px;
-        }*/
         .close {
             width: 50px;
             height: 50px;
@@ -173,27 +189,30 @@
         }
 
         #view_menu {
-            width: 400px;
-            max-width:90%;
+            width: 300px;
+            max-width: 90%;
             height: 100%;
             position: fixed;
             top: 0px;
-            right: -405px;
+            right: -305px;
             z-index: 10;
             border: 1px solid #c9c9c9;
             background-color: #474747;
-            text-align: center;
             transition: All 0.4s ease;
             -webkit-transition: All 0.4s ease;
             -moz-transition: All 0.4s ease;
             -o-transition: All 0.4s ease;
+            padding-top: 20px;
         }
-        #view_menu.open {
-            right: 0px;
-        }
+
+            #view_menu.open {
+                right: 0px;
+            }
+
         html.open {
             overflow: hidden;
         }
+
         .page_cover {
             width: 100%;
             height: 100%;
@@ -204,9 +223,114 @@
             z-index: 4;
             display: none;
         }
-        .page_cover.open {
+
+            .page_cover.open {
+                display: block;
+            }
+
+        #view_menu_1 {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid black;
+            background: #474747;
+        }
+        #view_menu_2 {
+            text-align: center;
+            width: 100%;
+            margin: 0 auto;
+            display: table;
+            line-height: 0px;
+            padding: 5px 0;
+            background: #575757;
+            border-top: 1px solid #7c7c7c;
+            border-bottom: 1px solid black;
+        }
+
+            #view_menu_2 > div {
+                display: table-cell;
+                position: relative;
+                cursor: pointer;
+            }
+
+                #view_menu_2 > div:nth-child(n+2)::before {
+                    display: block;
+                    position: absolute;
+                    top: 10px;
+                    left: 0px;
+                    width: 1px;
+                    height: 48px;
+                    border-left: 1px solid black;
+                    content: '';
+                }
+
+                #view_menu_2 > div img {
+                    width: 50px;
+                    height: 65px;
+                }
+        #mobile_list_story > span {
+            display: block;
+            color: white;
+            cursor: pointer;
+            font-family: 'Gothic A1', sans-serif;
+            font-size: 25px;
+            padding: 5px 10px;
+            background: #474747;
+            border-top: 1px solid #656565;
+            border-bottom: 1px solid black;
+            white-space: nowrap;
+        }
+        #mobile_list_story.open > span {
+            background:#686868;
+            border-top: 1px solid #939393;
+            border-bottom: 1px solid black;
+        }
+        #mobile_list_story > span img {
+           width:20px;
+           height:20px;
+        }
+        #mobile_list_story > ul {
+            display: none;
+        }
+        #mobile_list_story.open > ul {
+            overflow:auto;
             display: block;
         }
+        #mobile_list_story > ul li {
+            display: block;
+            color: white;
+            position:relative;
+            font-family: 'Gothic A1', sans-serif;
+            font-size: 20px;
+            padding: 5px 10px;
+            padding-left : 30px;
+            background: #474747;
+            border-top: 1px solid #656565;
+            border-bottom: 1px solid black;
+        }
+        #mobile_list_story > ul li input {
+            position:relative;
+        }
+            #mobile_list_story > ul li div{
+                display:block;
+                position:absolute;
+                margin:-5px -10px -5px -30px;
+                width:100%;
+                height:100%;
+                cursor:pointer;
+            }
+
+            #mobile_list_story > span > img:nth-of-type(1) {
+                display: inline;
+            }
+            #mobile_list_story > span > img:nth-of-type(2) {
+                display: none;
+            }
+            #mobile_list_story.open > span > img:nth-of-type(1) {
+                display: none;
+            }
+            #mobile_list_story.open > span > img:nth-of-type(2) {
+                display: inline;
+            }
     </style>
 
     <!--Content-->
@@ -217,24 +341,27 @@
                 margin: 0 auto;
                 overflow: hidden;
             }
-            #content > #main_section {
-                width: 100%;
-                margin: 5px;
-                margin-left: -400px;
-                float: left;
-            }
-            #content > #main_section > div {
-                padding-left: 400px;
-            }
-            #content > #main_aside {
-                width: 300px;
-                float: right;
-                padding: 20px;
-                margin: 5px;
-            }
+
+                #content > #main_section {
+                    width: 100%;
+                    margin: 5px;
+                    margin-left: -400px;
+                    float: left;
+                }
+
+                    #content > #main_section > div {
+                        padding-left: 400px;
+                    }
+
+                #content > #main_aside {
+                    width: 300px;
+                    float: right;
+                    padding: 20px;
+                    margin: 5px;
+                }
         }
 
-        @media screen and (max-width:799px), (orientation:portrait) {
+        @media screen and (max-width:799.5px), (orientation:portrait) {
             #content {
                 min-width: 550px;
                 margin: 0 auto;
@@ -268,12 +395,6 @@
             background: #232323;
             white-space: nowrap;
             color: #FFD500;
-            /*드래그 방지*/
-            -ms-user-select: none;
-            -moz-user-select: -moz-none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            user-select: none;
         }
 
             #main_aside > h3 {
@@ -284,43 +405,39 @@
                 font-weight: bold;
             }
 
-        #list_story > label {
+        #list_story > span {
             color: #FFEC9B;
             cursor: pointer
         }
 
-            #list_story > label:hover {
+            #list_story > span:hover {
                 color: #FFF1BF;
             }
 
-        #list_story > input {
+            #list_story > span > img:nth-of-type(1) {
+                display: inline;
+            }
+
+            #list_story > span > img:nth-of-type(2) {
+                display: none;
+            }
+
+        #list_story.open > span > img:nth-of-type(1) {
             display: none;
         }
 
-            #list_story > input + label > img:nth-of-type(1) {
-                display: inline;
-            }
+        #list_story.open > span > img:nth-of-type(2) {
+            display: inline;
+        }
 
-            #list_story > input + label > img:nth-of-type(2) {
-                display: none;
-            }
+        #list_story > ul {
+            display: none;
+        }
 
-            #list_story > input:checked + label > img:nth-of-type(1) {
-                display: none;
-            }
-
-            #list_story > input:checked + label > img:nth-of-type(2) {
-                display: inline;
-            }
-
-            #list_story > input ~ ul {
-                display: none;
-            }
-
-            #list_story > input:checked ~ ul {
-                padding-left: 30px;
-                display: block;
-            }
+        #list_story.open > ul {
+            padding-left: 30px;
+            display: block;
+        }
 
         #main_aside img {
             margin-right: 10px;
@@ -363,7 +480,30 @@
 
     <div onclick="callfunction('call_func_CloseMenu');" class="page_cover"></div>
     <div id="view_menu">
-        <div onclick="callfunction('call_func_CloseMenu');" class="close">
+        <div onclick="callfunction('call_func_CloseMenu');" class="close"></div>
+        <div id="view_menu_1"><h3>메뉴</h3></div>
+        <nav id="view_menu_2">
+            <div onclick="Mainframe.location.href='./Home.html'"><img src="./Image/icon_home.png" /></div>
+            <div onclick="Mainframe.location.href='./Worldview.html'"><img src="./Image/icon_worldview.png" /></div>
+            <div onclick="Mainframe.location.href='./Terms.html'"><img src="./Image/icon_terms.png" /></div>
+            <div onclick="Mainframe.location.href='./Characters.html'"><img src="./Image/icon_characters.png" /></div>
+        </nav>
+        <div id="view_menu_3">
+            <div id="mobile_list_story">
+                <span><img src="./Image/icon_unfold.png"><img src="./Image/icon_fold.png">스토리라인</span>
+                <ul>
+                    <li><div onclick="Mainframe.location.href='./storyline/stage00.html'"></div><input type="checkbox" name="chk_filter" value="stage00">제0장</li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stage01.html'"></div><input type="checkbox" name="chk_filter" value="stage01">제1장</li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stage02.html'"></div><input type="checkbox" name="chk_filter" value="stage02">제2장</li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stage03.html'"></div><input type="checkbox" name="chk_filter" value="stage03">제3장</li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stage04.html'"></div><input type="checkbox" name="chk_filter" value="stage04">제4장</li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stage05.html'"></div><input type="checkbox" name="chk_filter" value="stage05">제5장</li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stageE1.html'"></div><input type="checkbox" name="chk_filter" value="stageE1">이벤트 : 큐브작전</li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stage06.html'"></div><input type="checkbox" name="chk_filter" value="stage06">제6장</li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stage07.html'"></div><input type="checkbox" name="chk_filter" value="stage07">제7장</li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stageE2.html'"></div><input type="checkbox" name="chk_filter" value="stageE2">이벤트 : 저체온증</li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -381,20 +521,19 @@
                         <a href="Worldview.html" target="Mainframe">Girl's frontline의 세계관</a>
                     </li>
                     <li>
-                        <div id="list_story">
-                            <input id="bt_storyline" type="checkbox" name="name_storyline" checked="checked" />
-                            <label for="bt_storyline"><img src="./Image/icon_unfold.png"><img src="./Image/icon_fold.png">스토리라인</label>
+                        <div id="list_story" class="open">
+                            <span><img src="./Image/icon_unfold.png"><img src="./Image/icon_fold.png">스토리라인</span>
                             <ul>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage00"><a href="./storyline/stage00.html" target="Mainframe">제0장</a>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage01"><a href="./storyline/stage01.html" target="Mainframe">제1장</a>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage02"><a href="./storyline/stage02.html" target="Mainframe">제2장</a>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage03"><a href="./storyline/stage03.html" target="Mainframe">제3장</a>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage04"><a href="./storyline/stage04.html" target="Mainframe">제4장</a>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage05"><a href="./storyline/stage05.html" target="Mainframe">제5장</a>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stageE1"><a href="./storyline/stageE1.html" target="Mainframe">이벤트 : 큐브작전</a>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage06"><a href="./storyline/stage06.html" target="Mainframe">제6장</a>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage07"><a href="./storyline/stage07.html" target="Mainframe">제7장</a>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stageE2"><a href="./storyline/stageE2.html" target="Mainframe">이벤트 : 저체온증</a>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage00"><a href="./storyline/stage00.html" target="Mainframe">제0장</a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage01"><a href="./storyline/stage01.html" target="Mainframe">제1장</a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage02"><a href="./storyline/stage02.html" target="Mainframe">제2장</a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage03"><a href="./storyline/stage03.html" target="Mainframe">제3장</a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage04"><a href="./storyline/stage04.html" target="Mainframe">제4장</a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage05"><a href="./storyline/stage05.html" target="Mainframe">제5장</a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stageE1"><a href="./storyline/stageE1.html" target="Mainframe">이벤트 : 큐브작전</a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage06"><a href="./storyline/stage06.html" target="Mainframe">제6장</a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage07"><a href="./storyline/stage07.html" target="Mainframe">제7장</a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stageE2"><a href="./storyline/stageE2.html" target="Mainframe">이벤트 : 저체온증</a></li>
                             </ul>
                         </div>
                     </li>
@@ -413,22 +552,6 @@
             <div id="iframe-container">
                 <iframe src="./Home.html" name="Mainframe" id="id_mainframe" scrolling="no" onload="callfunction('call_func_resizeFrame');"></iframe>
             </div>
-            <script type="text/javascript">
-                /*function resizeFrame(fr) {
-                    //var obj = document.getElementById(fr);
-                    //obj.style.height = "0px";
-                    //var h = obj.contentWindow.document.body.clientHeight;
-                    //var h = obj.contentDocument.documentElement.scrollHeight;
-                    //$(this).height($(this).contents().find('body')[0].scrollHeight + "px");
-                    //var h = (obj.contentWindow.document.body.scrollHeight + obj.contentWindow.document.body.offsetHeight - obj.contentWindow.document.body.clientHeight);
-                    //obj.style.height = h + 50 + "px";
-                    //alert($("#id_mainframe").contents().find('body')[0].scrollHeight);
-                    $("#id_mainframe").height($("#id_mainframe").contents().find('body')[0].offsetHeight + 60);
-                    if (window.matchMedia('screen and (min-width:800px) and (orientation:landscape)').matches) {
-                        $("#view_menu").removeClass("open");
-                    }
-                }*/
-            </script>
         </section>
     </div>
     <footer id="main_footer"></footer>
