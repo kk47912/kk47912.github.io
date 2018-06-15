@@ -17,26 +17,55 @@
     </script>
 
     <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            color: #E8E6E6;
+        }
+
         body {
             font-family: 'Malgun Gothic';
+            padding: 0 5px;
+            margin-top: 30px;
+            background-color: #232323;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        div {
+            text-align: center;
+            margin: 10px 0;
         }
 
         img {
+            border: 0;
             display: block;
-            width: 80%;
+            max-width: 80%;
             height: auto;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 20px auto;
+        }
+
+        #movie {
+            width: 560px;
+            height: 315px;
+            max-width: 90%;
+            margin:10px 0;
         }
     </style>
 </head>
 
-<body topmargin=30 style="background-color:#232323;">
+<body>
 	<h1 style="text-align:center; color:#EAC300;">이벤트 : 큐브작전</h1>
 	<img src="../Image/img_CUBE.png" alt="img_CUBE">
-	<p style="text-align:center;">
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/zNHbtg1hJe4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-	</p>
+	<div style="text-align:center;">
+		<iframe id="movie" src="https://www.youtube.com/embed/zNHbtg1hJe4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	</div>
 </body>
 
 </html>
