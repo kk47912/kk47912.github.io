@@ -4,7 +4,6 @@
     <meta charset="utf-8">
 
     <title>Girl's frontline story</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -235,6 +234,7 @@
             border-bottom: 1px solid black;
             background: #474747;
         }
+
         #view_menu_2 {
             text-align: center;
             width: 100%;
@@ -268,6 +268,7 @@
                     width: 50px;
                     height: 65px;
                 }
+
         #mobile_list_story > span {
             display: block;
             color: white;
@@ -280,58 +281,68 @@
             border-bottom: 1px solid black;
             white-space: nowrap;
         }
+
         #mobile_list_story.open > span {
-            background:#686868;
+            background: #686868;
             border-top: 1px solid #939393;
             border-bottom: 1px solid black;
         }
+
         #mobile_list_story > span img {
-           width:20px;
-           height:20px;
+            width: 20px;
+            height: 20px;
         }
+
         #mobile_list_story > ul {
             display: none;
         }
+
         #mobile_list_story.open > ul {
-            overflow:auto;
+            overflow: auto;
             display: block;
         }
+
         #mobile_list_story > ul li {
             display: block;
             color: white;
-            position:relative;
+            position: relative;
             font-family: 'Gothic A1', sans-serif;
             font-size: 20px;
             padding: 5px 10px;
-            padding-left : 30px;
+            padding-left: 30px;
             background: #474747;
             border-top: 1px solid #656565;
             border-bottom: 1px solid black;
         }
-        #mobile_list_story > ul li input {
-            position:relative;
-        }
-            #mobile_list_story > ul li div{
-                display:block;
-                position:absolute;
-                margin:-5px -10px -5px -30px;
-                width:100%;
-                height:100%;
-                cursor:pointer;
+
+            #mobile_list_story > ul li input {
+                position: relative;
             }
 
-            #mobile_list_story > span > img:nth-of-type(1) {
-                display: inline;
+            #mobile_list_story > ul li div {
+                display: block;
+                position: absolute;
+                margin: -5px -10px -5px -30px;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
             }
-            #mobile_list_story > span > img:nth-of-type(2) {
-                display: none;
-            }
-            #mobile_list_story.open > span > img:nth-of-type(1) {
-                display: none;
-            }
-            #mobile_list_story.open > span > img:nth-of-type(2) {
-                display: inline;
-            }
+
+        #mobile_list_story > span > img:nth-of-type(1) {
+            display: inline;
+        }
+
+        #mobile_list_story > span > img:nth-of-type(2) {
+            display: none;
+        }
+
+        #mobile_list_story.open > span > img:nth-of-type(1) {
+            display: none;
+        }
+
+        #mobile_list_story.open > span > img:nth-of-type(2) {
+            display: inline;
+        }
     </style>
 
     <!--Content-->
@@ -467,6 +478,8 @@
             margin: 0px auto;
         }
     </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
