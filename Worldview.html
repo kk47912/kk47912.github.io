@@ -1,24 +1,23 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<script language="javascript">
-		document.onkeydown = trapRefresh;
-		function trapRefresh()
-		{
-			if (event.keyCode == 116)
-			{
-				event.keyCode = 0;
-				event.cancleBubble = true;
-				event.returnValue = false;
-				document.location.reload();
-			}
-		}
-	</script>
+    <script language="javascript">
+        document.onkeydown = trapRefresh;
+        function trapRefresh() {
+            if (event.keyCode == 116) {
+                event.keyCode = 0;
+                event.cancleBubble = true;
+                event.returnValue = false;
+                document.location.reload();
+            }
+        }
+    </script>
 
-	<!--페이지 변경-->
-	<script type="text/javascript">
+    <!--페이지 변경-->
+    <script type="text/javascript">
         var cnt = 1;
         function check_page() {
             var wvimg = document.getElementById("wv_img"); //이미지 변경
@@ -55,35 +54,37 @@
                 }
             }
         }
-		function prevImg(){
+        function prevImg() {
             if (cnt > 1) {
                 cnt--;
                 //document.getElementById("page_top").scrollIntoView();
                 check_page();
-			}
-		}
-		function nextImg(){
+            }
+        }
+        function nextImg() {
             if (cnt < 5) {
                 cnt++;
                 //document.getElementById("page_top").scrollIntoView();
                 check_page();
-			}
-		}
-	</script>
+            }
+        }
+    </script>
 
-	<style type="text/css">
+    <style type="text/css">
         body {
             font-family: 'Malgun Gothic';
         }
-		a.page{
-			text-decoration:none;
-			color:#FFD500;
-		}
-		a.page:hover{
-			text-decoration:none;
-			color:#FFF600;
-		}
-	</style>
+
+        a.page {
+            text-decoration: none;
+            color: #FFD500;
+        }
+
+            a.page:hover {
+                text-decoration: none;
+                color: #FFF600;
+            }
+    </style>
 </head>
 
 <body topmargin=30 style="background-color:#232323; text-align:center;">

@@ -2,8 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script language=javascript>
         document.onkeydown = trapRefresh;
         function trapRefresh() {
@@ -34,6 +35,7 @@
         body {
             font-family: 'Malgun Gothic';
         }
+
         td.image {
             border: 2px solid black;
             border-bottom-style: none;
@@ -41,23 +43,27 @@
             height: 170px;
             vertical-align: bottom;
             line-height: 0px;
-            cursor:pointer;
+            cursor: pointer;
         }
+
         td.named {
             border: 2px solid black;
             font-size: 20px;
             color: #FFD500;
         }
+
         img.logo {
             max-width: 80%;
             height: auto;
             display: block;
-            margin:0 auto;
+            margin: 0 auto;
         }
+
         a {
             text-decoration: none;
             color: #FFD500;
         }
+
         table {
             border-collapse: collapse;
             text-align: center;
