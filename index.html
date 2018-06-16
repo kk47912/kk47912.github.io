@@ -26,7 +26,6 @@
     </script>
     <script>
         $(document).ready(function () {
-            alert(document.location.href);
             $("#mobile_list_story > ul").css('height', $("#view_menu").height() - $("#view_menu_1").height() - $("#view_menu_2").height() - $("#mobile_list_story > span").height() - 70 + "px");
             $("#list_story > span").click(function () {
                 if ($("#list_story").hasClass("open")) {
@@ -53,6 +52,7 @@
             call_func_CloseMenu = func_CloseMenu;
 
             function func_resizeFrame() {
+                alert(document.getElementById("id_mainframe").contentWindow.location.href);
                 $("#id_mainframe").height($("#id_mainframe").contents().find('body')[0].offsetHeight + 60);
                 if (window.matchMedia('screen and (min-width:800px) and (orientation:landscape)').matches) {
                     $("#view_menu, .page_cover, html").removeClass("open");
