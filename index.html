@@ -26,6 +26,7 @@
     </script>
     <script>
         $(document).ready(function () {
+            alert(document.location.href);
             $("#mobile_list_story > ul").css('height', $("#view_menu").height() - $("#view_menu_1").height() - $("#view_menu_2").height() - $("#mobile_list_story > span").height() - 70 + "px");
             $("#list_story > span").click(function () {
                 if ($("#list_story").hasClass("open")) {
@@ -317,6 +318,9 @@
         }
 
             #mobile_list_story > ul li input {
+                width:35px;
+                height:35px;
+                vertical-align:middle;
                 position: relative;
             }
 
@@ -567,7 +571,7 @@
             </div>
         </section>
     </div>
-    <footer id="main_footer"></footer>
+    <footer id="main_footer">해당 사이트는 '소녀전선'의 데이터를 기반으로 작성되었으며, 그에 관련한 모든 저작권, 권리는 SUNBORN Network Technology, Digital Sky Entertainment, 哔哩哔哩, X.D. global에게 귀속되어있습니다.</footer>
 </body>
 
 </html>
