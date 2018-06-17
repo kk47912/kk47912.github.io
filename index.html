@@ -26,7 +26,10 @@
     </script>
     <script>
         $(document).ready(function () {
+            //모바일메뉴 [스토리라인]항목 크기 할당
             $("#mobile_list_story > ul").css('height', $("#view_menu").height() - $("#view_menu_1").height() - $("#view_menu_2").height() - $("#mobile_list_story > span").height() - 70 + "px");
+
+            //메뉴 [스토리라인]항목 접기/펼치기
             $("#list_story > span").click(function () {
                 if ($("#list_story").hasClass("open")) {
                     $("#list_story").removeClass("open");
@@ -34,6 +37,8 @@
                     $("#list_story").addClass("open");
                 }
             });
+
+            //모바일메뉴 [스토리라인]항목 접기/펼치기
             $("#mobile_list_story > span").click(function () {
                 if ($("#mobile_list_story").hasClass("open")) {
                     $("#mobile_list_story").removeClass("open");
@@ -42,29 +47,137 @@
                 }
             });
 
+            //모바일메뉴 열기
             $("#bt_menu > img").click(function () {
                 $("#view_menu, .page_cover, html").addClass("open");
             });
 
+            //모바일메뉴 닫기
             function func_CloseMenu() {
                 $("#view_menu, .page_cover, html").removeClass("open");
             }
             call_func_CloseMenu = func_CloseMenu;
 
+            //iframe크기조절
             function func_resizeFrame() {
-                alert(document.getElementById("id_mainframe").contentWindow.location.href);
                 $("#id_mainframe").height($("#id_mainframe").contents().find('body')[0].offsetHeight + 60);
                 if (window.matchMedia('screen and (min-width:800px) and (orientation:landscape)').matches) {
                     $("#view_menu, .page_cover, html").removeClass("open");
                 }
             }
             call_func_resizeFrame = func_resizeFrame;
+
+            //스토리 표시현황 체크
+            {
+                $("input[name=stage0]").change(function () {
+                    if ($(this).prop("checked")) {
+                        alert("제0장 체크");
+                        $("input[name=stage0]").prop("checked", true);
+                    } else {
+                        alert("제0장 체크해제");
+                        $("input[name=stage0]").prop("checked", false);
+                    }
+                    check_storyfilter();
+                });
+                $("input[name=stage1]").change(function () {
+                    if ($(this).prop("checked")) {
+                        alert("제1장 체크");
+                        $("input[name=stage1]").prop("checked", true);
+                    } else {
+                        alert("제1장 체크해제");
+                        $("input[name=stage1]").prop("checked", false);
+                    }
+                    check_storyfilter();
+                });
+                $("input[name=stage2]").change(function () {
+                    if ($(this).prop("checked")) {
+                        alert("제2장 체크");
+                        $("input[name=stage2]").prop("checked", true);
+                    } else {
+                        alert("제2장 체크해제");
+                        $("input[name=stage2]").prop("checked", false);
+                    }
+                    check_storyfilter();
+                });
+                $("input[name=stage3]").change(function () {
+                    if ($(this).prop("checked")) {
+                        alert("제3장 체크");
+                        $("input[name=stage3]").prop("checked", true);
+                    } else {
+                        alert("제3장 체크해제");
+                        $("input[name=stage3]").prop("checked", false);
+                    }
+                    check_storyfilter();
+                });
+                $("input[name=stage4]").change(function () {
+                    if ($(this).prop("checked")) {
+                        alert("<제4장 내용표시>\n변경점 : 제0전역 개방");
+                        $("input[name=stage4]").prop("checked", true);
+                    } else {
+                        alert("제4장의 내용을 숨깁니다.");
+                        $("input[name=stage4]").prop("checked", false);
+                    }
+                    check_storyfilter();
+                });
+                $("input[name=stage5]").change(function () {
+                    if ($(this).prop("checked")) {
+                        alert("제5장 체크");
+                        $("input[name=stage5]").prop("checked", true);
+                    } else {
+                        alert("제5장 체크해제");
+                        $("input[name=stage5]").prop("checked", false);
+                    }
+                    check_storyfilter();
+                });
+                $("input[name=stageE1]").change(function () {
+                    if ($(this).prop("checked")) {
+                        alert("이벤트 : 큐브작전 체크");
+                        $("input[name=stageE1]").prop("checked", true);
+                    } else {
+                        alert("이벤트 : 큐브작전 체크해제");
+                        $("input[name=stageE1]").prop("checked", false);
+                    }
+                    check_storyfilter();
+                });
+                $("input[name=stage6]").change(function () {
+                    if ($(this).prop("checked")) {
+                        alert("제6장 체크");
+                        $("input[name=stage6]").prop("checked", true);
+                    } else {
+                        alert("제6장 체크해제");
+                        $("input[name=stage6]").prop("checked", false);
+                    }
+                    check_storyfilter();
+                });
+            }
+            function check_storyfilter(){
+                if ($("input[name=stage4]").prop("checked")) {
+                    $("#list_story li:nth-child(1) span").html("제0장");
+                    $("#mobile_list_story li:nth-child(1) span").html("제0장");
+                    $("#list_story li:nth-child(1) a").attr("href", "./storyline/stage0.html");
+                    $("#mobile_list_story li:nth-child(1) div").attr("onclick", "Mainframe.location.href='./storyline/stage0.html'");
+                    $("input[name=stage0]").show();
+                } else {
+                    $("#list_story li:nth-child(1) span").html("프롤로그");
+                    $("#mobile_list_story li:nth-child(1) span").html("프롤로그");
+                    $("#list_story li:nth-child(1) a").attr("href", "./storyline/Prologue.html");
+                    $("#mobile_list_story li:nth-child(1) div").attr("onclick", "Mainframe.location.href='./storyline/Prologue.html'");
+                    $("input[name=stage0]").hide();
+                }
+            }
+            check_storyfilter();
         });
         function callfunction(func_name) {
             if (func_name == 'call_func_CloseMenu') call_func_CloseMenu();
-            if (func_name == 'call_func_resizeFrame') call_func_resizeFrame();
+            if (func_name == 'call_func_resizeFrame') {
+                /*var loc = document.getElementById("id_mainframe").contentWindow.location.href;
+                if (loc.match('/Home.html')) {
+                    alert("!!!");
+                }*/ //미사용, 아이디어 보존용으로 과제 마감후 개인적으로 사용할 수도 있음.
+                //프레임의 현재 주소에 따라 메뉴의 표시가 달라지는 기능(구상).
+                call_func_resizeFrame();
+            }
         }
-
         $(window).resize(function () {
             $("#mobile_list_story > ul").css('height', $("#view_menu").height() - $("#view_menu_1").height() - $("#view_menu_2").height() - $("#mobile_list_story > span").height() - 70 + "px");
             callfunction('call_func_resizeFrame');
@@ -117,7 +230,7 @@
                 position: relative;
             }
 
-            main_header > #title {
+            #main_header > #title {
                 position: absolute;
                 left: 10px;
                 top: 20px;
@@ -270,6 +383,14 @@
                     width: 50px;
                     height: 65px;
                 }
+
+                #view_menu_2 > div img:nth-child(1){
+                    display:inline-block;
+                }
+
+                    #view_menu_2 > div img:nth-child(2) {
+                        display: none;
+                    }
 
         #mobile_list_story > span {
             display: block;
@@ -424,7 +545,7 @@
 
         #list_story > span {
             color: #FFEC9B;
-            cursor: pointer
+            cursor: pointer;
         }
 
             #list_story > span:hover {
@@ -466,11 +587,11 @@
             margin-bottom: 2px;
         }
 
-        #main_aside a {
+        #main_aside a, #list_story ul span, #mobile_list_story ul span {
             color: #FFD500;
         }
 
-            #main_aside a:hover {
+            #main_aside a:hover, #list_story ul span:hover{
                 color: #FFF600;
             }
     </style>
@@ -509,16 +630,14 @@
             <div id="mobile_list_story">
                 <span><img src="./Image/icon_unfold.png"><img src="./Image/icon_fold.png">스토리라인</span>
                 <ul>
-                    <li><div onclick="Mainframe.location.href='./storyline/stage00.html'"></div><input type="checkbox" name="chk_filter" value="stage00">제0장</li>
-                    <li><div onclick="Mainframe.location.href='./storyline/stage01.html'"></div><input type="checkbox" name="chk_filter" value="stage01">제1장</li>
-                    <li><div onclick="Mainframe.location.href='./storyline/stage02.html'"></div><input type="checkbox" name="chk_filter" value="stage02">제2장</li>
-                    <li><div onclick="Mainframe.location.href='./storyline/stage03.html'"></div><input type="checkbox" name="chk_filter" value="stage03">제3장</li>
-                    <li><div onclick="Mainframe.location.href='./storyline/stage04.html'"></div><input type="checkbox" name="chk_filter" value="stage04">제4장</li>
-                    <li><div onclick="Mainframe.location.href='./storyline/stage05.html'"></div><input type="checkbox" name="chk_filter" value="stage05">제5장</li>
-                    <li><div onclick="Mainframe.location.href='./storyline/stageE1.html'"></div><input type="checkbox" name="chk_filter" value="stageE1">이벤트 : 큐브작전</li>
-                    <li><div onclick="Mainframe.location.href='./storyline/stage06.html'"></div><input type="checkbox" name="chk_filter" value="stage06">제6장</li>
-                    <li><div onclick="Mainframe.location.href='./storyline/stage07.html'"></div><input type="checkbox" name="chk_filter" value="stage07">제7장</li>
-                    <li><div onclick="Mainframe.location.href='./storyline/stageE2.html'"></div><input type="checkbox" name="chk_filter" value="stageE2">이벤트 : 저체온증</li>
+                    <li><div onclick="Mainframe.location.href='./storyline/Prologue.html'"></div><input type="checkbox" name="stage0" style="display:none;"><span>프롤로그</span></li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stage1.html'"></div><input type="checkbox" name="stage1"><span>제1장</span></li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stage2.html'"></div><input type="checkbox" name="stage2"><span>제2장</span></li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stage3.html'"></div><input type="checkbox" name="stage3"><span>제3장</span></li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stage4.html'"></div><input type="checkbox" name="stage4"><span>제4장</span></li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stage5.html'"></div><input type="checkbox" name="stage5"><span>제5장</span></li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stageE1.html'"></div><input type="checkbox" name="stageE1"><span>이벤트 : 큐브작전</span></li>
+                    <li><div onclick="Mainframe.location.href='./storyline/stage6.html'"></div><input type="checkbox" name="stage6"><span>제6장</span></li>
                 </ul>
             </div>
         </div>
@@ -541,16 +660,14 @@
                         <div id="list_story" class="open">
                             <span><img src="./Image/icon_unfold.png"><img src="./Image/icon_fold.png">스토리라인</span>
                             <ul>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage00"><a href="./storyline/stage00.html" target="Mainframe">제0장</a></li>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage01"><a href="./storyline/stage01.html" target="Mainframe">제1장</a></li>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage02"><a href="./storyline/stage02.html" target="Mainframe">제2장</a></li>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage03"><a href="./storyline/stage03.html" target="Mainframe">제3장</a></li>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage04"><a href="./storyline/stage04.html" target="Mainframe">제4장</a></li>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage05"><a href="./storyline/stage05.html" target="Mainframe">제5장</a></li>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stageE1"><a href="./storyline/stageE1.html" target="Mainframe">이벤트 : 큐브작전</a></li>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage06"><a href="./storyline/stage06.html" target="Mainframe">제6장</a></li>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stage07"><a href="./storyline/stage07.html" target="Mainframe">제7장</a></li>
-                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="chk_filter" value="stageE2"><a href="./storyline/stageE2.html" target="Mainframe">이벤트 : 저체온증</a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="stage0" style="display:none;"><a href="./storyline/Prologue.html" target="Mainframe"><span>프롤로그</span></a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="stage1"><a href="./storyline/stage1.html" target="Mainframe"><span>제1장</span></a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="stage2"><a href="./storyline/stage2.html" target="Mainframe"><span>제2장</span></a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="stage3"><a href="./storyline/stage3.html" target="Mainframe"><span>제3장</span></a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="stage4"><a href="./storyline/stage4.html" target="Mainframe"><span>제4장</span></a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="stage5"><a href="./storyline/stage5.html" target="Mainframe"><span>제5장</span></a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="stageE1"><a href="./storyline/stageE1.html" target="Mainframe"><span>이벤트 : 큐브작전</span></a></li>
+                                <li><img src="./Image/icon_disc.png"><input type="checkbox" name="stage6"><a href="./storyline/stage6.html" target="Mainframe"><span>제6장</span></a></li>
                             </ul>
                         </div>
                     </li>
