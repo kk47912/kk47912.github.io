@@ -8,8 +8,10 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="./scripts/jquery.cookie.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
 
     <script language=javascript>
         document.onkeydown = trapRefresh;
@@ -35,7 +37,7 @@
             background: #232323;
             margin-top: 30px;
             height: 200%;
-            padding:0 10px;
+            padding: 0 10px;
         }
 
         li {
@@ -77,6 +79,11 @@
             margin-right: 20px;
         }
     </style>
+    <style type="text/css">
+        #shown_list span:not(.none){
+            display:none;
+        }
+    </style>
 </head>
 <body id="id_body">
     <h1>Girl's frontline 스토리 해설집</h1>
@@ -92,31 +99,20 @@
     </p>
     <br>
     <div style="color:#FFCC00;">&lt;현재 사이트에서 표시되는 관련텍스트&gt;</div>
-    <!--
-    <div>
+    <div id="shown_list">
+        <span class="none">없음</span>
+        <span class="stage0">제0장</span>
+        <span class="stage1">제1장</span>
+        <span class="stage2">제2장</span>
+        <span class="stage3">제3장</span>
+        <span class="stage4">제4장</span>
+        <span class="stage5">제5장</span>
+        <span class="stage6">제6장</span>
+        <br /><br />
+        <span class="stageE1">큐브작전</span>
+    </div>
 
-        <ul>
-            <li>제0장</li>
-            <li>제1장</li>
-            <li>제2장</li>
-            <li>제3장</li>
-            <li>제4장</li>
-            <li>제5장</li>
-            <li>제6장</li>
-            <li>제7장</li>
-        </ul>
-    </div>
-    <br>
-    <div>
-        <ul>
-            <li>큐브작전</li>
-            <li>저체온증</li>
-        </ul>
-    </div>
-    -->
-    <div>
-        없음
-    </div>
+    <script type="text/javascript" src="./scripts/story_filter.js" charset="utf-8"></script>
 </body>
 
 </html>

@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="./scripts/jquery.cookie.js"></script>
+
     <script language="javascript">
         document.onkeydown = trapRefresh;
         function trapRefresh() {
@@ -67,6 +70,16 @@
                 check_page();
             }
         }
+
+        function pop_image(url) {
+            var img = new Image();
+            img.src = url;
+            var img_width = img.width;
+            var win_width = img.width + 25;
+            var height = img.height + 30;
+            var OpenWindow = window.open('', '_blank', 'width=' + img_width + ', height=' + height + ', menubars=no, scrollbars=auto');
+            OpenWindow.document.write("<style>body{margin:0px; cursor:pointer;}</style><img src='" + url + "' width='" + win_width + "' onclick='self.close();'>");
+        }
     </script>
 
     <style type="text/css">
@@ -80,7 +93,7 @@
             font-family: 'Malgun Gothic';
             padding: 0 10px;
             background: #232323;
-            text-align:center;
+            text-align: center;
         }
 
         li {
@@ -96,42 +109,45 @@
                 text-decoration: none;
                 color: #FFF600;
             }
+
         div {
             color: #FFD500;
             font-size: 27pt;
-            margin:10px 0;
+            margin: 10px 0;
         }
 
         img {
-            border:0;
+            border: 0;
             max-width: 95%;
             height: auto;
-            margin:20px 0;
-            cursor:pointer;
+            margin: 20px 0;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
-	<h1 id="page_top" style="color:#E8E6E6;">Girl's frontline의 세계관</h1>
-	<div>
-		<span><a href="javascript:void(0)" name="bt_prev" class="page" onclick="prevImg();">&lt;&lt;&nbsp;&nbsp;</a></span> <!-- 페이지1일때 안보이게 -->
-		<span class="Current_page">1</span>
-		<span>/</span>
-		<span>5</span>
-		<span><a href="javascript:void(0)" name="bt_next" class="page" onclick="nextImg();">&nbsp;&nbsp;&gt;&gt;</a></span> <!-- 페이지5일때 안보이게 -->
-	</div>
-	<img src="./Image/wv1.jpg" alt="wv1" id="wv_img"> <!-- 페이지 이동마다 이미지 바뀌게하기 -->
-	<div>
-		<span><a href="javascript:void(0)" name="bt_prev" class="page" onclick="prevImg();">&lt;&lt;&nbsp;&nbsp;</a></span> <!-- 페이지1일때 안보이게 -->
-		<span class="Current_page">1</span>
-		<span>/</span>
-		<span>5</span>
-		<span><a href="javascript:void(0)" name="bt_next" class="page" onclick="nextImg();">&nbsp;&nbsp;&gt;&gt;</a></span> <!-- 페이지5일때 안보이게 -->
-	</div>
+    <h1 id="page_top" style="color:#E8E6E6;">Girl's frontline의 세계관</h1>
+    <div>
+        <span><a href="javascript:void(0)" name="bt_prev" class="page" onclick="prevImg();">&lt;&lt;&nbsp;&nbsp;</a></span> <!-- 페이지1일때 안보이게 -->
+        <span class="Current_page">1</span>
+        <span>/</span>
+        <span>5</span>
+        <span><a href="javascript:void(0)" name="bt_next" class="page" onclick="nextImg();">&nbsp;&nbsp;&gt;&gt;</a></span> <!-- 페이지5일때 안보이게 -->
+    </div>
+    <img src="./Image/wv1.jpg" alt="wv1" id="wv_img" onclick="pop_image(this.src);"> <!-- 페이지 이동마다 이미지 바뀌게하기 -->
+    <div>
+        <span><a href="javascript:void(0)" name="bt_prev" class="page" onclick="prevImg();">&lt;&lt;&nbsp;&nbsp;</a></span> <!-- 페이지1일때 안보이게 -->
+        <span class="Current_page">1</span>
+        <span>/</span>
+        <span>5</span>
+        <span><a href="javascript:void(0)" name="bt_next" class="page" onclick="nextImg();">&nbsp;&nbsp;&gt;&gt;</a></span> <!-- 페이지5일때 안보이게 -->
+    </div>
 
     <script type="text/javascript">
         check_page();
     </script>
+
+    <script type="text/javascript" src="./scripts/story_filter.js" charset="utf-8"></script>
 </body>
 </html>

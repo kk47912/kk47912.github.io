@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="./scripts/jquery.cookie.js"></script>
+
     <script language=javascript>
         document.onkeydown = trapRefresh;
         function trapRefresh() {
@@ -89,32 +91,31 @@
 </head>
 
 <body>
-	<h1 style="text-align:center; color:#E8E6E6;">등장인물</h1>
-	<div>
-		<div style="text-align:center; font-size:50px; font-weight:bold; color:#98C600;">Anti Rain</div>
-		<img class="logo" src="./Image/logo_AR.png" alt="blank">
-		<div style="text-align:center;">
-			<table>
-				<tr><td class="image M4A1" onclick="" onmouseover="hover_effect('M4A1','over');" onmouseout="hover_effect('M4A1','out')"><img src="./Image/portrait_M4A1.png" alt="M4A1"></td></tr>
-				<tr><td class="named M4A1"><a href="#" onmouseover="hover_effect('M4A1','over');" onmouseout="hover_effect('M4A1','out')">M4A1</a></td></tr>
-			</table>
-			<table>
-				<tr><td class="image M4_SOPMOD2" onclick="" onmouseover="hover_effect('M4_SOPMOD2','over');" onmouseout="hover_effect('M4_SOPMOD2','out')"><img src="./Image/portrait_M4_SOPMOD2.png" alt="M4 SOPMOD II"></td></tr>
-				<tr><td class="named M4_SOPMOD2"><a href="#" onmouseover="hover_effect('M4_SOPMOD2','over');" onmouseout="hover_effect('M4_SOPMOD2','out')">M4 SOPMOD II</a></td></tr>
-			</table>
-			<table>
-				<tr><td class="image ST_AR-15" onclick="" onmouseover="hover_effect('ST_AR-15','over');" onmouseout="hover_effect('ST_AR-15','out')"><img src="./Image/portrait_ST_AR-15.png" alt="ST AR-15"></td></tr>
-				<tr><td class="named ST_AR-15"><a href="#" onmouseover="hover_effect('ST_AR-15','over');" onmouseout="hover_effect('ST_AR-15','out')">ST AR-15</a></td></tr>
-			</table>
-			<table>
-				<tr><td class="image M16A1" onclick="" onmouseover="hover_effect('M16A1','over');" onmouseout="hover_effect('M16A1','out')"><img src="./Image/portrait_M16A1.png" alt="M16A1"></td></tr>
-				<tr><td class="named M16A1"><a href="#" onmouseover="hover_effect('M16A1','over');" onmouseout="hover_effect('M16A1','out')">M16A1</a></td></tr>
-			</table>
-		</div>
-	</div>
+    <h1 style="text-align:center; color:#E8E6E6;">등장인물</h1>
+    <div>
+        <div style="text-align:center; font-size:50px; font-weight:bold; color:#98C600;">Anti Rain</div>
+        <img class="logo" src="./Image/logo_AR.png" alt="blank">
+        <div style="text-align:center;">
+            <table>
+                <tr><td class="image M4A1" onclick="" onmouseover="hover_effect('M4A1','over');" onmouseout="hover_effect('M4A1','out')"><img src="./Image/portrait_M4A1.png" alt="M4A1"></td></tr>
+                <tr><td class="named M4A1"><a href="#" onmouseover="hover_effect('M4A1','over');" onmouseout="hover_effect('M4A1','out')">M4A1</a></td></tr>
+            </table>
+            <table>
+                <tr><td class="image M4_SOPMOD2" onclick="" onmouseover="hover_effect('M4_SOPMOD2','over');" onmouseout="hover_effect('M4_SOPMOD2','out')"><img src="./Image/portrait_M4_SOPMOD2.png" alt="M4 SOPMOD II"></td></tr>
+                <tr><td class="named M4_SOPMOD2"><a href="#" onmouseover="hover_effect('M4_SOPMOD2','over');" onmouseout="hover_effect('M4_SOPMOD2','out')">M4 SOPMOD II</a></td></tr>
+            </table>
+            <table>
+                <tr><td class="image ST_AR-15" onclick="" onmouseover="hover_effect('ST_AR-15','over');" onmouseout="hover_effect('ST_AR-15','out')"><img src="./Image/portrait_ST_AR-15.png" alt="ST AR-15"></td></tr>
+                <tr><td class="named ST_AR-15"><a href="#" onmouseover="hover_effect('ST_AR-15','over');" onmouseout="hover_effect('ST_AR-15','out')">ST AR-15</a></td></tr>
+            </table>
+            <table>
+                <tr><td class="image M16A1" onclick="" onmouseover="hover_effect('M16A1','over');" onmouseout="hover_effect('M16A1','out')"><img src="./Image/portrait_M16A1.png" alt="M16A1"></td></tr>
+                <tr><td class="named M16A1"><a href="#" onmouseover="hover_effect('M16A1','over');" onmouseout="hover_effect('M16A1','out')">M16A1</a></td></tr>
+            </table>
+        </div>
+    </div>
 
-	<p>
-	</p>
-</BODY>
+    <script type="text/javascript" src="./scripts/story_filter.js" charset="utf-8"></script>
+</body>
 
 </html>
