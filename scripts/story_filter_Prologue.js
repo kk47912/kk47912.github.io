@@ -20,7 +20,7 @@
         $(".stage3").hide();
     }
     if ($.cookie('chk_stage4') != null) {
-        location.href = "./storyline/stage0.html";
+        window.location.href = "./storyline/stage0.html";
     } else {
         $(".stage4").hide();
     }
