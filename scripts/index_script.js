@@ -34,18 +34,18 @@
 
     //iframe크기조절
     function func_resizeFrame() {
-        document.getElementById('id_mainframe').contentWindow.check_storyfilter(); //텍스트필터 적용
-        try {
-            $("#id_mainframe").height($("#id_mainframe").contents().find('body')[0].offsetHeight + 60); //리사이징
-        } catch (e) {
-            console.error("error occurred : " + e);
-        }
-        
+        document.getElementById('id_mainframe').contentWindow.check_storyfilter(); //텍스트필터 적용  
         if (window.matchMedia('screen and (min-width:800px) and (orientation:landscape)').matches) {
             $("#view_menu, .page_cover, html").removeClass("open");
             $("#id_mainframe").contents().find('html').removeClass("mobile"); //자식프레임에게도 동일한 조건의 미디어쿼리 적용
         } else {
             $("#id_mainframe").contents().find('html').addClass("mobile");
+        }
+
+        try {
+            $("#id_mainframe").height($("#id_mainframe").contents().find('body')[0].offsetHeight + 60); //리사이징
+        } catch (e) {
+            console.error("error occurred : " + e);
         }
         iframeready = 1;
     }
