@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="../scripts/jquery.cookie.js"></script>
@@ -19,6 +18,11 @@
         }
     </script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //window.parent.interface_mobile==0
+        });
+    </script>
     
     <style type="text/css">
         * {
@@ -26,7 +30,7 @@
             padding: 0;
             color: #E8E6E6;
         }
-
+        
         body {
             font-family: 'Malgun Gothic';
             padding: 0 10px;
@@ -49,6 +53,9 @@
             font-size:15px;
             line-height:25px;
         }
+        html.mobile article{
+            overflow:initial;
+        }
 
         div.subtitle {
             color: #FFE251;
@@ -65,7 +72,7 @@
         #character_info {
             border: 1px solid white;
             border-collapse: collapse;
-            margin: 0 auto;
+            margin : 0 auto;
         }
 
             #character_info td {
@@ -89,6 +96,15 @@
             height: auto;
             margin: 0 10px 10px 10px;
             float: right;
+        }
+        html.mobile img.illust {
+            border: 0;
+            background:none;
+            display: block;
+            max-width: 80%;
+            height: auto;
+            margin: 10px auto;
+            float: none;
         }
 
         img.position {

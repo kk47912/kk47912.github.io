@@ -43,6 +43,9 @@
         
         if (window.matchMedia('screen and (min-width:800px) and (orientation:landscape)').matches) {
             $("#view_menu, .page_cover, html").removeClass("open");
+            $("#id_mainframe").contents().find('html').removeClass("mobile"); //자식프레임에게도 동일한 조건의 미디어쿼리 적용
+        } else {
+            $("#id_mainframe").contents().find('html').addClass("mobile");
         }
         iframeready = 1;
     }
