@@ -26,6 +26,7 @@
         }
     </script>
     <script type="text/javascript" src="./scripts/index_script.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./scripts/lightbox_script.js" charset="utf-8"></script>
 
     <!--initialize-->
     <style>
@@ -78,24 +79,24 @@
                 position: relative;
             }
 
-            #main_header > #title {
-                position: absolute;
-                left: 10px;
-                top: 20px;
-            }
-
-            #main_header > #bt_menu {
-                display: none;
-                position: absolute;
-                right: 10px;
-                top: 10px;
-            }
-
-                #main_header > #bt_menu > img {
-                    width: 50px;
-                    height: 50px;
-                    cursor: pointer;
+                #main_header > #title {
+                    position: absolute;
+                    left: 10px;
+                    top: 20px;
                 }
+
+                #main_header > #bt_menu {
+                    display: none;
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                }
+
+                    #main_header > #bt_menu > img {
+                        width: 50px;
+                        height: 50px;
+                        cursor: pointer;
+                    }
 
             body > input:nth-of-type(1) {
                 display: none;
@@ -191,6 +192,47 @@
                 display: block;
             }
 
+        #lightbox {
+            position: fixed;
+            width:80%;
+            height:80%;
+            top:5%;
+            left:10%;
+            padding:20px;
+            background: #414141;
+            z-index: 5;
+            display: none;
+        }
+            #lightbox h2 {
+                margin-bottom: 20px;
+            }
+            .gotoback{
+                margin-top:20px;
+                text-align:center;
+            }
+            #lightbox article {
+                overflow: hidden;
+                line-height: 28px;
+                font-size: 0.9rem;
+                margin:10px;
+            }
+
+            #lightbox p {
+                margin-bottom: 20px;
+                font-size: 0.9rem;
+            }
+
+        #lightbox_shadow {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(0,0,0,0.4);
+            z-index: 4;
+            display: none;
+        }
+
         #view_menu_1 {
             text-align: center;
             padding-bottom: 20px;
@@ -232,9 +274,9 @@
                     height: 65px;
                 }
 
-                #view_menu_2 > div img:nth-child(1){
-                    display:inline-block;
-                }
+                    #view_menu_2 > div img:nth-child(1) {
+                        display: inline-block;
+                    }
 
                     #view_menu_2 > div img:nth-child(2) {
                         display: none;
@@ -287,9 +329,9 @@
         }
 
             #mobile_list_story > ul li input {
-                width:35px;
-                height:35px;
-                vertical-align:middle;
+                width: 35px;
+                height: 35px;
+                vertical-align: middle;
                 position: relative;
             }
 
@@ -439,7 +481,7 @@
             color: #FFD500;
         }
 
-            #main_aside a:hover, #list_story ul span:hover{
+            #main_aside a:hover, #list_story ul span:hover {
                 color: #FFF600;
             }
     </style>
@@ -465,14 +507,45 @@
     </header>
 
     <div onclick="callfunction('call_func_CloseMenu');" class="page_cover"></div>
+    <div onclick="close_lightbox();" id="lightbox_shadow"></div>
+    <div id="lightbox">
+        <div id="Parapluie">
+            <h2 style='text-align:center;'><span class='stage5 then_hide' style="color:#FFD500;">우산 계획</span><span class='stage5' style="color:#FFD500;">우산 바이러스</span></h2>
+            <article>
+                <span class="stage5 then_hide">
+                    철혈의 정체불명의 계획, UMP45를 통해서 그 존재가 확인되었으나 구체적인 내용은 아직 알 수 없다.
+                </span>
+                <span class="stage5">
+                    논리 바이러스 명칭. 그리폰의 전술인형을 감염시켜 보안망을 뚫고 정보를 수집하고 통신네트워크를 교란하여 위험에 빠트린다.
+                    <span class="stage6 then_hide">그와 동시에 철혈의 권한을 어느정도 사용 할 수 있는 것으로 보인다.</span>
+                    <span class="stage6">
+                        그리고 최종적으로는 그리폰 인형의 기존 운영체제를 철혈의 것으로 덮어씌워 철혈의 통제를 받게만든다.
+                    </span>
+                </span>
+                <div style="margin-top:10px; text-align:center;">
+                    <a href="javascript:close_lightbox();" style="color:#FFD500; text-decoration:underline;">돌아가기</a>
+                </div>
+            </article>
+        </div>
+        <div id="ASST">
+            <h2 style='text-align:center; color:#FFD500;'>ASST 각인 시스템</h2>
+            <article>
+                16Lab의 페르시카가 고안한 시스템. 식각 이론을 기반으로 한 기술로 전술인형에게 무기를 감응연결을 하여 마치 팔다리가 된 것 같이 무기를 잘 다룰 수 있게 된다.
+                <br />이 기능 덕분에 전술인형은 무기를 들고있지 않더라도 총구가 어디로 향하는지 알 수 있다.
+            </article>
+            <div style="margin-top:10px; text-align:center;">
+                <a href="javascript:close_lightbox();" style="color:#FFD500; text-decoration:underline;">돌아가기</a>
+            </div>
+        </div>
+    </div>
     <div id="view_menu">
         <div onclick="callfunction('call_func_CloseMenu');" class="close"></div>
         <div id="view_menu_1"><h3>메뉴</h3></div>
         <nav id="view_menu_2">
-            <div onclick="Mainframe.location.href='./Home.html'"><img src="./Image/icon_home.png" alt="홈"/></div>
-            <div onclick="Mainframe.location.href='./Worldview.html'"><img src="./Image/icon_worldview.png" alt="세계관"/></div>
-            <div onclick="Mainframe.location.href='./Terms.html'"><img src="./Image/icon_terms.png" alt="용어집"/></div>
-            <div onclick="Mainframe.location.href='./Characters.html'"><img src="./Image/icon_characters.png" alt="등장인물"/></div>
+            <div onclick="Mainframe.location.href='./Home.html'"><img src="./Image/icon_home.png" alt="홈" /></div>
+            <div onclick="Mainframe.location.href='./Worldview.html'"><img src="./Image/icon_worldview.png" alt="세계관" /></div>
+            <div onclick="Mainframe.location.href='./Terms.html'"><img src="./Image/icon_terms.png" alt="용어집" /></div>
+            <div onclick="Mainframe.location.href='./Characters.html'"><img src="./Image/icon_characters.png" alt="등장인물" /></div>
         </nav>
         <div id="view_menu_3">
             <div id="mobile_list_story">

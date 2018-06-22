@@ -153,26 +153,44 @@
     function check_storyfilter() {
         if ($.cookie('chk_stage0') != null) {
             $("input[name=stage0]").prop("checked", true);
+            $(".stage0").show();
+            $(".stage0.then_hide").hide();
         } else {
             $("input[name=stage0]").prop("checked", false);
+            $(".stage0").hide();
+            $(".stage0.then_hide").show();
         }
         if ($.cookie('chk_stage1') != null) {
             $("input[name=stage1]").prop("checked", true);
+            $(".stage1").show();
+            $(".stage1.then_hide").hide();
         } else {
             $("input[name=stage1]").prop("checked", false);
+            $(".stage1").hide();
+            $(".stage1.then_hide").show();
         }
         if ($.cookie('chk_stage2') != null) {
             $("input[name=stage2]").prop("checked", true);
+            $(".stage2").show();
+            $(".stage2.then_hide").hide();
         } else {
             $("input[name=stage2]").prop("checked", false);
+            $(".stage2").hide();
+            $(".stage2.then_hide").show();
         }
         if ($.cookie('chk_stage3') != null) {
             $("input[name=stage3]").prop("checked", true);
+            $(".stage3").show();
+            $(".stage3.then_hide").hide();
         } else {
             $("input[name=stage3]").prop("checked", false);
+            $(".stage3").hide();
+            $(".stage3.then_hide").show();
         }
         if ($.cookie('chk_stage4') != null) {
             $("input[name=stage4]").prop("checked", true);
+            $(".stage4").show();
+            $(".stage4.then_hide").hide();
             $("#list_story li:nth-child(1) span").html("제0장");
             $("#mobile_list_story li:nth-child(1) span").html("제0장");
             $("#list_story li:nth-child(1) a").attr("href", "./storyline/stage0.html");
@@ -180,6 +198,8 @@
             $("input[name=stage0]").show();
         } else {
             $("input[name=stage4]").prop("checked", false);
+            $(".stage4").hide();
+            $(".stage4.then_hide").show();
             $("#list_story li:nth-child(1) span").html("프롤로그");
             $("#mobile_list_story li:nth-child(1) span").html("프롤로그");
             $("#list_story li:nth-child(1) a").attr("href", "./storyline/Prologue.html");
@@ -188,18 +208,30 @@
         }
         if ($.cookie('chk_stage5') != null) {
             $("input[name=stage5]").prop("checked", true);
+            $(".stage5").show();
+            $(".stage5.then_hide").hide();
         } else {
             $("input[name=stage5]").prop("checked", false);
+            $(".stage5").hide();
+            $(".stage5.then_hide").show();
         }
         if ($.cookie('chk_stageE1') != null) {
             $("input[name=stageE1]").prop("checked", true);
+            $(".stageE1").show();
+            $(".stageE1.then_hide").hide();
         } else {
             $("input[name=stageE1]").prop("checked", false);
+            $(".stageE1").hide();
+            $(".stageE1.then_hide").show();
         }
         if ($.cookie('chk_stage6') != null) {
             $("input[name=stage6]").prop("checked", true);
+            $(".stage6").show();
+            $(".stage6.then_hide").hide();
         } else {
             $("input[name=stage6]").prop("checked", false);
+            $(".stage6").hide();
+            $(".stage6.then_hide").show();
         }
         if (iframeready == 1) {
             func_resizeFrame();
