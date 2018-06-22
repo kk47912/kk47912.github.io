@@ -20,6 +20,17 @@
         }
     </script>
     <style type="text/css">
+        article {
+            margin: 10px 0;
+            min-height: 0px;
+            line-height: 28px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
         div {
             text-align: center;
             margin: 10px 0;
@@ -27,10 +38,25 @@
 
             div.subtitle {
                 color: #FFE251;
-                font-size: 18pt;
+                font-size: 1.5rem;
                 font-style: italic;
                 text-align: center;
                 font-family: "Malgun Gothic";
+            }
+
+        .summary {
+            color: #FFE251;
+            width: 80%;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: "Malgun Gothic";
+            margin: 0 auto;
+            margin-bottom: 30px;
+            display: table;
+        }
+
+            .summary div {
+                display: table-cell;
             }
 
         img {
@@ -40,6 +66,20 @@
             height: auto;
             margin: 10px auto;
         }
+
+        #end_comment {
+            text-align: center;
+        }
+
+            #end_comment div:first-child {
+                margin: 0;
+                font-size: 0.8rem;
+            }
+
+            #end_comment div:last-child {
+                margin: 0;
+                font-size: 1.2rem;
+            }
     </style>
 </head>
 <body>
@@ -47,11 +87,42 @@
 
     <div>
         <span style="font-size:35px; font-weight:bold;">종자</span>
-        <span style="font-size:15px; vertical-align:bottom;">The seed</span>
+        <span style="font-size:15px; vertical-align:bottom;">The Seed</span>
     </div>
     <div class="subtitle">'침수발생! 진퇴양난!'</div>
 
-    <img src="../Image/map_stage00_2.png" alt="map_stage00_2">
+    <img src="../Image/img_st0_00.png">
+
+    <div class="summary">
+        <div style="vertical-align:top">「</div>
+        <div>
+            AR팀이 페르시카로부터 “리코”가 #3 세이프 하우스에 남긴 정보를 회수하라는 임무를 받아 임무를 수행하던 도중, 철혈에게 포위 당하게 된다.
+        </div>
+        <div style="vertical-align:bottom">」</div>
+    </div>
+
+    <article>
+        <p>
+            AR팀이 페르시카로부터 S09구역에서 “리코”라는 이름의 사람이 남긴 자료를 회수해오라는 명령을 받게 된다.
+            조사를 통해 최종적으로 찾아야 할 데이터베이스가 #3 세이프 하우스에 있다는 것을 알아낸 AR팀은
+            페르시카가 알려준 비밀번호를 입력해 데이터베이스의 열람 권한을 얻은 후 바로 데이터 수집을 시작했다.
+            하지만 그때, 에이전트가 철혈 병력을 끌고 와 세이프 하우스를 포위하고선 자료를 뺏어가려고 하였지만,
+            AR팀은 그리폰 인형 제대의 도움을 받아 고전을 거듭하면서 도망치는 데 성공한다.
+            그러나 결국에는 철혈에게 붙잡힐 것을 알기에 M16A1은 다른 팀원들과 함께 흩어져 적을 유인하고,
+            M4A1에게 자료를 맡겨 가까운 지역의 그리폰 지휘관을 찾도록 하였다.
+        </p>
+        <p>
+            한편, 그리폰 총사령부의 부관인 헬리안은 AR팀과 연락이 끊긴 것이 페르시카와 관련이 있다는 걸 보고받자마자 곧바로 그리폰 총 사령부에 보고한다.
+            이때, 화면이 사건이 일어난 지점과 그다지 멀리 떨어져 있지 않은 지휘부로 전환되면서, 이제 막 임관식을 마치고 전입해 온 지휘관을 비추게 된다...
+        </p>
+    </article>
+
+    <img src="../Image/img_intro.png">
+
+    <div id="end_comment">
+        <div>이 세계를 새로 쓰게 될 칼끝</div>
+        <div>세계의 끝을 개척하기 위하여.</div>
+    </div>
 
     <script type="text/javascript" src="../scripts/story_filter.js" charset="utf-8"></script>
 </body>

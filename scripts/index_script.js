@@ -55,11 +55,11 @@
     {
         $("input[name=stage0]").change(function () {
             if ($(this).prop("checked")) {
-                alert("제0장 체크");
+                alert("<제0장 내용표시>");
                 $("input[name=stage0]").prop("checked", true);
                 $.cookie('chk_stage0', '1', { expires: 765, path: '/' });
             } else {
-                alert("제0장 체크해제");
+                alert("제0장의 내용을 숨깁니다.");
                 $("input[name=stage0]").prop("checked", false);
                 $.removeCookie('chk_stage0', { path: '/' })
             }
@@ -67,11 +67,11 @@
         });
         $("input[name=stage1]").change(function () {
             if ($(this).prop("checked")) {
-                alert("제1장 체크");
+                alert("<제1장 내용표시>");
                 $("input[name=stage1]").prop("checked", true);
                 $.cookie('chk_stage1', '1', { expires: 765, path: '/' });
             } else {
-                alert("제1장 체크해제");
+                alert("제1장의 내용을 숨깁니다.");
                 $("input[name=stage1]").prop("checked", false);
                 $.removeCookie('chk_stage1', { path: '/' })
             }
@@ -79,11 +79,11 @@
         });
         $("input[name=stage2]").change(function () {
             if ($(this).prop("checked")) {
-                alert("제2장 체크");
+                alert("<제2장 내용표시>");
                 $("input[name=stage2]").prop("checked", true);
                 $.cookie('chk_stage2', '1', { expires: 765, path: '/' });
             } else {
-                alert("제2장 체크해제");
+                alert("제2장의 내용을 숨깁니다.");
                 $("input[name=stage2]").prop("checked", false);
                 $.removeCookie('chk_stage2', { path: '/' })
             }
@@ -91,11 +91,11 @@
         });
         $("input[name=stage3]").change(function () {
             if ($(this).prop("checked")) {
-                alert("제3장 체크");
+                alert("<제3장 내용표시>");
                 $("input[name=stage3]").prop("checked", true);
                 $.cookie('chk_stage3', '1', { expires: 765, path: '/' });
             } else {
-                alert("제3장 체크해제");
+                alert("제3장의 내용을 숨깁니다.");
                 $("input[name=stage3]").prop("checked", false);
                 $.removeCookie('chk_stage3', { path: '/' })
             }
@@ -103,7 +103,7 @@
         });
         $("input[name=stage4]").change(function () {
             if ($(this).prop("checked")) {
-                alert("<제4장 내용표시>\n변경점 : 제0전역 개방");
+                alert("<제4장 내용표시>\n특이사항 : 제0전역 개방");
                 $("input[name=stage4]").prop("checked", true);
                 $.cookie('chk_stage4', '1', { expires: 765, path: '/' });
             } else {
@@ -115,11 +115,11 @@
         });
         $("input[name=stage5]").change(function () {
             if ($(this).prop("checked")) {
-                alert("제5장 체크");
+                alert("<제5장 내용표시>");
                 $("input[name=stage5]").prop("checked", true);
                 $.cookie('chk_stage5', '1', { expires: 765, path: '/' });
             } else {
-                alert("제5장 체크해제");
+                alert("제5장의 내용을 숨깁니다.");
                 $("input[name=stage5]").prop("checked", false);
                 $.removeCookie('chk_stage5', { path: '/' })
             }
@@ -127,11 +127,11 @@
         });
         $("input[name=stageE1]").change(function () {
             if ($(this).prop("checked")) {
-                alert("이벤트 : 큐브작전 체크");
+                alert("<'이벤트 : 큐브작전' 내용표시>");
                 $("input[name=stageE1]").prop("checked", true);
                 $.cookie('chk_stageE1', '1', { expires: 765, path: '/' });
             } else {
-                alert("이벤트 : 큐브작전 체크해제");
+                alert("'이벤트 : 큐브작전'의 내용을 숨깁니다.");
                 $("input[name=stageE1]").prop("checked", false);
                 $.removeCookie('chk_stageE1', { path: '/' })
             }
@@ -139,11 +139,11 @@
         });
         $("input[name=stage6]").change(function () {
             if ($(this).prop("checked")) {
-                alert("제6장 체크");
+                alert("<제6장 내용표시>");
                 $("input[name=stage6]").prop("checked", true);
                 $.cookie('chk_stage6', '1', { expires: 765, path: '/' });
             } else {
-                alert("제6장 체크해제");
+                alert("제6장의 내용을 숨깁니다.");
                 $("input[name=stage6]").prop("checked", false);
                 $.removeCookie('chk_stage6', { path: '/' })
             }

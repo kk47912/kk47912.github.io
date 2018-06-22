@@ -25,18 +25,35 @@
     </script>
 
     <style type="text/css">
-        div {
-            text-align: center;
+        article {
             margin: 10px 0;
+            min-height: 0px;
+            line-height: 28px;
         }
 
-            div.subtitle {
-                color: #FFE251;
-                font-size: 18pt;
-                font-style: italic;
-                text-align: center;
-                font-family: "Malgun Gothic";
-            }
+        p {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        div {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .summary {
+            color: #FFE251;
+            width: 80%;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: "Malgun Gothic";
+            margin: 0 auto;
+            margin-bottom:30px;
+            display:table;
+        }
+        .summary div {
+            display:table-cell;
+        }
 
         img {
             border: 0;
@@ -45,12 +62,59 @@
             height: auto;
             margin: 10px auto;
         }
+
+        #end_comment {
+            text-align:center;
+        }
+        #end_comment div:first-child{
+            margin:0;
+            font-size:0.8rem;
+        }
+        #end_comment div:last-child{
+            margin:0;
+            font-size:1.2rem;
+        }
     </style>
 </head>
 <body>
     <h1 style="text-align:center; color:#EAC300;">프롤로그</h1>
 
-    <img src="../Image/map_stage00_2.png" alt="map_stage00_2">
+    <div>
+        <span style="font-size:22px;">Prologue</span>
+    </div>
+
+    <img src="../Image/img_st0_01.png">
+
+    <div class="summary">
+        <div style="vertical-align:top">「</div>
+        <div>
+            AR팀이 #3 세이프 하우스에서 임무를 수행하던 중, 철혈의 보스인 에이전트에게 습격을 받게 되고,
+            그리폰 제대의 도움을 받아 도망쳤지만 결국 뿔뿔이 흩어지게 된다.
+        </div>
+        <div style="vertical-align:bottom">」</div>
+    </div>
+
+    <article>
+        <p>
+            그리폰의 전술인형 - M4A1이 어둠 속에서 천천히 눈을 뜨자, #3 세이프 하우스는 불타고 있었고, 자신은 철혈의 전술인형인 에이전트에게 목이 졸려지고 있었다.
+            에이전트가 M4A1을 죽이기 전 위협을 가하고 있던 이때, 타이밍 좋게 나타난 M16A1으로 인해, 잠깐이나마 에이전트를 제압할 수 있었고, AR팀의 다른 팀원인 AR-15와 M4 SOPMOD II와도 곧 합류하게 된다.
+        </p>
+        <p>
+            AR팀을 S09 구역에서 벗어날 수 있도록 그리폰의 다른 인형들이 전력을 다했다고는 하지만, 애초부터 위태로웠던 전선은 에이전트의 공세를 막아낼 수 없었고,
+            결국 M16A1은 다른 팀원들은 버티도록 지시하고, M4A1에게 자료를 맡겨 먼저 구역에서 탈출하게 했다.
+        </p>
+        <p>
+            그리폰 총사령부의 부관인 헬리안은 AR팀과 연락이 끊긴 것이 페르시카와 관련이 있다는 걸 보고받자마자 곧바로 그리폰 총 사령부에 보고한다.
+            이때, 화면이 사건이 일어난 지점과 그다지 멀리 떨어져 있지 않은 지휘부로 전환되면서, 이제 막 임관식을 마치고 전입해 온 지휘관을 비추게 된다...
+        </p>
+    </article>
+
+    <img src="../Image/img_intro.png">
+
+    <div id="end_comment">
+        <div>이 세계를 새로 쓰게 될 칼끝</div>
+        <div>세계의 끝을 개척하기 위하여.</div>
+    </div>
 
     <script type="text/javascript" src="../scripts/story_filter_Prologue.js" charset="utf-8"></script>
 </body>
